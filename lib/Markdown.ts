@@ -58,8 +58,8 @@ function highlight(code: string[], paramters: string, added: boolean): string[] 
 export function anchor(md: any) {
   md.core.ruler.push('anchor', (state: any) => {
     for (let id = 0; id < state.tokens.length; id++) {
-      // Check if the type of the element is a heading
-      if (state.tokens[id].type == 'heading_open') {
+      // Check if the type of the element is a H2 heading
+      if (state.tokens[id].tag == 'h2' && state.tokens[id].type == 'heading_open') {
         // Get the content from the next item because the heading_open token does not
         // contain the title. We also remove any characters that are not alphanumeric.
         const title = state.tokens[id + 1].content.replace(/[^\w\s]/gi, '')

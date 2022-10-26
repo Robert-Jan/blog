@@ -6,5 +6,7 @@ export type Post = {
   date: string
   tags?: string[]
   html?: string
-  toc?: string[]
+  hero?: string
+  heroCredits?: string
+  readingTime?: Number
 }

@@ -5,9 +5,10 @@ import 'highlight.js/styles/github-dark.css'
 import md from 'markdown-it'
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
+import { BodySection } from '../components/Article/BodySection'
+import { HeadSection } from '../components/Article/HeadSection'
 import { anchor, code } from '../lib/Markdown'
 import type { Post } from '../lib/Post'
-import { toc } from '../lib/Toc'
 
 export const getStaticPaths: GetStaticPaths = async () => {
   const paths = fs.readdirSync('resources/posts').map((fileName) => ({
@@ -29,14 +30,18 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
     .use(anchor)
     .render(content)
 
+  const words = content.trim().split(/\s+/).length
+
   const post: Post = {
     title: data.title,
     description: data.description,
     keywords: data.keywords,
-    date: JSON.stringify(data.date),
+    date: data.date.toISOString(),
     tags: data.tags,
     html: html,
-    toc: data.toc ? toc(html) : []
+    hero: data.hero ?? null,
+    heroCredits: data.heroCredits ?? null,
+    readingTime: Math.ceil(words / 225)
   }
 
   return {
@@ -47,14 +52,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(post)
   return (
     <>
       <Head>
         <title>{post.title}</title>
       </Head>
       <div>
-        Post
-        <div dangerouslySetInnerHTML={{ __html: post.html }} className="prose max-w-none" />
+        <HeadSection post={post} />
+        <BodySection post={post} />
       </div>
     </>
   )

@@ -1,12 +1,13 @@
 ---
-title: Example blog
+title: Building a blog with Next.js
 description: Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task.
 keywords: example,keyword
 date: 2022-07-08
-toc: true
 tags:
   - foo
   - bar
+hero: /images/posts/example-blog.jpg
+heroCredits: Photo by william william on Unsplash
 ---
 
 ## Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task that required a keen eye for typography and a lot of complex custom CSS.

@@ -1,11 +1,11 @@
 import type { AppProps } from 'next/app'
-import Layout from '../components/Layout'
+import Base from '../components/Layout/Base'
 import '../resources/style.css'
 
 export default function Blog({ Component, pageProps }: AppProps) {
   return (
-    <Layout>
+    <Base>
       <Component {...pageProps} />
-    </Layout>
+    </Base>
   )
 }
