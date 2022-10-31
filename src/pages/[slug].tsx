@@ -5,13 +5,13 @@ import 'highlight.js/styles/github-dark.css'
 import md from 'markdown-it'
 import type { GetStaticPaths, GetStaticProps, InferGetStaticPropsType } from 'next'
 import Head from 'next/head'
-import { BodySection } from '../components/Article/BodySection'
-import { HeadSection } from '../components/Article/HeadSection'
-import { anchor, code } from '../lib/Markdown'
-import type { Post } from '../lib/Post'
+import { BodySection } from '../components/article/BodySection'
+import { HeadSection } from '../components/article/HeadSection'
+import type { Article } from '../shared/article'
+import { anchor, code } from '../shared/Markdown'
 
 export const getStaticPaths: GetStaticPaths = async () => {
-  const paths = fs.readdirSync('resources/posts').map((fileName) => ({
+  const paths = fs.readdirSync('blog/articles').map((fileName) => ({
     params: { slug: fileName.replace('.md', '') }
   }))
 
@@ -19,7 +19,7 @@ export const getStaticPaths: GetStaticPaths = async () => {
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-  const file = fs.readFileSync(`resources/posts/${params?.slug}.md`, 'utf-8')
+  const file = fs.readFileSync(`blog/articles/${params?.slug}.md`, 'utf-8')
   const { data, content } = matter(file)
 
   const html = md({
@@ -32,7 +32,7 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   const words = content.trim().split(/\s+/).length
 
-  const post: Post = {
+  const article: Article = {
     title: data.title,
     description: data.description,
     keywords: data.keywords,
@@ -46,21 +46,21 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 
   return {
     props: {
-      post
+      article
     }
   }
 }
 
-export default function Post({ post }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(post)
+export default function article({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
+  console.log(article)
   return (
     <>
       <Head>
-        <title>{post.title}</title>
+        <title>{article.title}</title>
       </Head>
       <div>
-        <HeadSection post={post} />
-        <BodySection post={post} />
+        <HeadSection article={article} />
+        <BodySection article={article} />
       </div>
     </>
   )

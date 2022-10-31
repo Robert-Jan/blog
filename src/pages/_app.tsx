@@ -1,6 +1,6 @@
 import type { AppProps } from 'next/app'
-import Base from '../components/Layout/Base'
-import '../resources/style.css'
+import '../../tailwind.css'
+import Base from '../components/layout/Base'
 
 export default function Blog({ Component, pageProps }: AppProps) {
   return (

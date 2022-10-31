@@ -11,9 +11,9 @@ export default function About() {
               I’m{' '}
               <span
                 style={{
-                  'background-image': '-webkit-linear-gradient(45deg, #EA4798, #CA8A04)',
-                  '-webkit-background-clip': 'text',
-                  '-webkit-text-fill-color': 'transparent'
+                  backgroundImage: '-webkit-linear-gradient(45deg, #EA4798, #CA8A04)',
+                  WebkitBackgroundClip: 'text',
+                  WebkitTextFillColor: 'transparent'
                 }}>
                 Robert-Jan
               </span>

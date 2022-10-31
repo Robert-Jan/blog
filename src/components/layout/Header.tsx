@@ -15,9 +15,9 @@ export const Header = () => (
           <span
             className="inline text-3xl font-black tracking-tight text-zinc-400"
             style={{
-              'background-image': '-webkit-linear-gradient(45deg, #EA4798, #CA8A04)',
-              '-webkit-background-clip': 'text',
-              '-webkit-text-fill-color': 'transparent'
+              backgroundImage: '-webkit-linear-gradient(45deg, #EA4798, #CA8A04)',
+              WebkitBackgroundClip: 'text',
+              WebkitTextFillColor: 'transparent'
             }}>
             Robert-Jan
           </span>
@@ -40,7 +40,7 @@ export const Header = () => (
           ))}
         </ul>
       </nav>
-      <div className="pointer-events-auto flex flex-1 justify-end">
+      <div className="pointer-events-auto relative flex flex-1 justify-end">
         <LightToggle />
       </div>
     </div>

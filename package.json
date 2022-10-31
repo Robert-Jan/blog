@@ -10,6 +10,8 @@
     "prettier": "prettier --write \"**/*.{ts,tsx,css}\""
   },
   "dependencies": {
+    "@headlessui/react": "^1.7.3",
+    "@headlessui/tailwindcss": "^0.1.1",
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.6.0",
     "markdown-it": "^13.0.1",

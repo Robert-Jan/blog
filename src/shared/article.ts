@@ -1,4 +1,4 @@
-export type Post = {
+export type Article = {
   title: string
   description: string
   keywords: string
