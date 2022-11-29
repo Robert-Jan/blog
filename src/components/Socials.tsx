@@ -4,7 +4,7 @@ export const Socials = () => (
   <ul role="list" className="mt-12">
     <li className="flex">
       <Link
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+        className="group flex text-sm font-medium text-slate-800 transition hover:text-yellow-500 dark:text-slate-200 dark:hover:text-yellow-500"
         href="https://twitter.com/R0B3RT_J4N"
         target="_blank"
         rel="noreferrer">
@@ -19,7 +19,7 @@ export const Socials = () => (
     </li>
     <li className="mt-4 flex">
       <Link
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+        className="group flex text-sm font-medium text-slate-800 transition hover:text-yellow-500 dark:text-slate-200 dark:hover:text-yellow-500"
         href="https://github.com/Robert-Jan/"
         target="_blank"
         rel="noreferrer">
@@ -37,7 +37,7 @@ export const Socials = () => (
     </li>
     <li className="mt-4 flex">
       <Link
-        className="group flex text-sm font-medium text-zinc-800 transition hover:text-yellow-500 dark:text-zinc-200 dark:hover:text-yellow-500"
+        className="group flex text-sm font-medium text-slate-800 transition hover:text-yellow-500 dark:text-slate-200 dark:hover:text-yellow-500"
         href="https://www.linkedin.com/in/robert-jan/"
         target="_blank"
         rel="noreferrer">

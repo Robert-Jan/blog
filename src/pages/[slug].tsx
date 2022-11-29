@@ -52,7 +52,6 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 }
 
 export default function article({ article }: InferGetStaticPropsType<typeof getStaticProps>) {
-  console.log(article)
   return (
     <>
       <Head>

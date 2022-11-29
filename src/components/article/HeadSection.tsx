@@ -1,4 +1,5 @@
 import Image from 'next/image'
+import Link from 'next/link'
 import { Article } from '../../shared/article'
 
 type HeadSectionProps = {
@@ -7,12 +8,22 @@ type HeadSectionProps = {
 
 export const HeadSection = ({ article }: HeadSectionProps) => (
   <>
-    <div className="bg-zinc-100 dark:bg-slate-800">
+    <div className="bg-zinc-100 dark:bg-zinc-800">
       <div className="mx-auto max-w-4xl">
-        <div className="pb-8 pt-6">
-          <h1 className="text-3xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
+        <div className="pb-4 pt-6">
+          <h1 className="text-3xl font-bold tracking-tight text-slate-800 dark:text-slate-100 sm:text-4xl">
             {article.title}
           </h1>
+        </div>
+        <div className="pb-4">
+          {article.tags?.map((tag: string) => (
+            <Link
+              href={'/articles/' + tag}
+              key={tag}
+              className="mr-2 rounded-full bg-zinc-300 py-1 px-3">
+              {tag}
+            </Link>
+          ))}
         </div>
         {article.hero && <div className="h-48" /* Placeholder for hero image overlap */ />}
       </div>
@@ -29,7 +40,7 @@ export const HeadSection = ({ article }: HeadSectionProps) => (
           />
         </div>
       )}
-      <div className="mt-6 flex items-center text-base text-zinc-400 dark:text-zinc-500">
+      <div className="mt-6 flex items-center text-base text-slate-400 dark:text-slate-500">
         <>
           <time dateTime={article.date}>
             {new Date(article.date).toLocaleDateString('en-US', {

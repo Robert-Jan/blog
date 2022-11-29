@@ -5,7 +5,7 @@ export default class Blog extends Document {
     return (
       <Html className="">
         <Head />
-        <body className="bg-zinc-50 antialiased dark:bg-slate-900 dark:text-slate-100">
+        <body className="bg-zinc-50 antialiased dark:bg-zinc-900 dark:text-slate-100">
           <Main />
           <NextScript />
         </body>

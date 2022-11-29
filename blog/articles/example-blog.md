@@ -1,11 +1,11 @@
 ---
-title: Building a blog with Next.js
-description: Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task.
+title: Crafting a design system for a multiplanetary future
+description: Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria we needed to create a brand that would still inspire us 100 years from now when humanity has spread across our entire solar system.
 keywords: example,keyword
 date: 2022-07-08
 tags:
-  - foo
-  - bar
+  - .NET 7
+  - Entity Framework
 hero: /images/posts/example-blog.jpg
 heroCredits: Photo by william william on Unsplash
 ---

@@ -1,6 +1,6 @@
 ---
-title: Code
-description: Until now, trying to style an article, document, or blog post with Tailwind has been a tedious task.
+title: Rewriting the cosmOS kernel in Rust
+description: When we released the first version of cosmOS last year, it was written in Go. Go is a wonderful programming language with a lot of benefits, but it’s been a while since I’ve seen an article on the front page of Hacker News about rewriting some important tool in Go and I see articles on there about rewriting things in Rust every single week.
 keywords: example,keyword
 date: 2022-07-08
 tags:

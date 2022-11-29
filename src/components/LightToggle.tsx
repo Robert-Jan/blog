@@ -4,7 +4,7 @@ export const LightToggle = () => (
   <Menu>
     <Menu.Button
       aria-label="Toggle dark mode"
-      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-slate-800/5 ring-1 ring-slate-900/5 backdrop-blur transition dark:bg-slate-900/90 dark:ring-white/10 dark:hover:ring-white/20">
+      className="group rounded-full bg-white/90 px-3 py-2 shadow-lg shadow-slate-800/5 ring-1 ring-slate-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-white/10 dark:hover:ring-white/20">
       <svg
         viewBox="0 0 24 24"
         strokeWidth="1.5"
@@ -30,7 +30,7 @@ export const LightToggle = () => (
     </Menu.Button>
     <Menu.Items
       as="ul"
-      className="dark:highlight-white/5 absolute top-full right-0 z-50 mt-4 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-800/5 ring-1 ring-slate-900/5 backdrop-blur transition dark:bg-slate-900/90 dark:ring-white/10 dark:hover:ring-white/20">
+      className="dark:highlight-white/5 absolute top-full right-0 z-50 mt-4 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold text-slate-700 shadow-lg shadow-slate-800/5 ring-1 ring-slate-900/5 backdrop-blur transition dark:bg-zinc-900/90 dark:ring-white/10 dark:hover:ring-white/20">
       <Menu.Item as="li" className="flex cursor-pointer items-center py-1 px-2">
         <svg
           viewBox="0 0 24 24"
