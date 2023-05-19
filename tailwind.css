@@ -1,0 +1,32 @@
+@tailwind base;
+
+pre {
+  scrollbar-width: thin;
+  scrollbar-color: transparant transparant;
+}
+
+/* Chrome, Edge, and Safari */
+pre::-webkit-scrollbar {
+  height: 5px;
+  margin-top: 3px;
+}
+
+pre::-webkit-scrollbar-track {
+  background: transparant;
+  margin-top: 5px;
+  border-bottom-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+}
+
+pre::-webkit-scrollbar-thumb {
+  background-color: transparant;
+  border-radius: 14px;
+  border: 10px solid transparant;
+}
+
+@tailwind components;
+@tailwind utilities;
+
+html * {
+  @apply transition-all duration-200;
+}
