@@ -26,7 +26,3 @@ pre::-webkit-scrollbar-thumb {
 
 @tailwind components;
 @tailwind utilities;
-
-html * {
-  @apply transition-all duration-200;
-}

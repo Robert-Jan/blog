@@ -17,7 +17,12 @@ export default class Blog extends Document {
                 } catch (_) {}`
             }}
           />
-          <script async src="https://analytics.umami.is/script.js" data-website-id="54ed1cb4-7d0d-4d0c-bbfc-93d64c72873b"></script>
+          {process.env.NODE_ENV == "production" && (
+            <script
+              async
+              src="https://analytics.umami.is/script.js"
+              data-website-id="54ed1cb4-7d0d-4d0c-bbfc-93d64c72873b"></script>
+          )}
         </Head>
         <body className="overflow-y-scroll bg-zinc-50 dark:bg-zinc-950 dark:text-zinc-50">
           <Main />
