@@ -17,6 +17,8 @@ concurrency:
 jobs:
   build:
     runs-on: ubuntu-latest
+    env:
+      URL: https://robert-jan.dev
     steps:
       - name: Checkout
         uses: actions/checkout@v3
@@ -38,9 +40,9 @@ jobs:
           path: |
             .next/cache
           key:
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json')}}-${{hashFiles('**.[jt]s', '**.[jt]sx') }}
+            $node-cache-{{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json')}}-${{hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
-            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+            $node-cache-{{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
       - name: Install dependencies
         run: npm ci
