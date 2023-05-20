@@ -72,8 +72,8 @@ export default function About(): JSX.Element {
             <ol className="mt-6 space-y-4">
               <li className="flex gap-4">
                 <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                  <img
-                    alt=""
+                  <Image
+                    alt="Azure logo"
                     loading="lazy"
                     width="32"
                     height="32"
@@ -97,8 +97,8 @@ export default function About(): JSX.Element {
               </li>
               <li className="flex gap-4">
                 <div className="relative mt-1 flex h-10 w-10 flex-none items-center justify-center rounded-full shadow-md shadow-zinc-800/5 ring-1 ring-zinc-900/5 dark:border dark:border-zinc-700/50 dark:bg-zinc-800 dark:ring-0">
-                  <img
-                    alt=""
+                  <Image
+                    alt="Azure logo"
                     loading="lazy"
                     width="32"
                     height="32"
