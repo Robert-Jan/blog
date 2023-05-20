@@ -3,7 +3,7 @@ import { Feed } from "feed";
 import { Article } from "@/Articles";
 
 export default async function generate(articles: Article[]) {
-  const URL = process.env.VERCEL_URL ?? "http://localhost:3000";
+  const URL = process.env.URL ?? "http://localhost:3000";
   const author = {
     name: "Robert-Jan"
   };
