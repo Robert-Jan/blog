@@ -14,12 +14,12 @@ export default function Footer(): JSX.Element {
               {item.name}
             </Link>
           ))}
-            <Link
-              href="https://analytics.umami.is/share/JNJEuYObvZIxbV66/Blog"
-              target="_blank"
-              className="transition hover:text-yellow-500 dark:hover:text-yellow-400">
-              Analytics
-            </Link>
+          <Link
+            href="https://analytics.umami.is/share/JNJEuYObvZIxbV66/Blog"
+            target="_blank"
+            className="transition hover:text-yellow-500 dark:hover:text-yellow-400">
+            Analytics
+          </Link>
         </div>
         <p className="text-sm text-zinc-400 dark:text-zinc-500">
           © {new Date().getFullYear()} robert-jan.dev. All rights reserved.
