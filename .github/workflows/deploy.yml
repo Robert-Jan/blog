@@ -26,35 +26,35 @@ jobs:
         with:
           node-version: "16"
           cache: npm
-          
+
       - name: Setup Pages
         uses: actions/configure-pages@v3
         with:
           static_site_generator: next
-          
+
       - name: Restore cache
         uses: actions/cache@v3
         with:
           path: |
             .next/cache
-          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          key:
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json')}}-${{hashFiles('**.[jt]s', '**.[jt]sx') }}
           restore-keys: |
             ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
-            
+
       - name: Install dependencies
         run: npm ci
-        
+
       - name: Build with Next.js
-        run: npx --no-install next build
-        
+        run: npm run build
+
       - name: Static HTML export with Next.js
-        run: npx --no-install next export
-        
+        run: npm run export
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v1
         with:
           path: ./out
-
 
   deploy:
     environment:
