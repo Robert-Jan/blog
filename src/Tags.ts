@@ -3,7 +3,7 @@ import fs from "fs";
 
 export type Tag = {
   Name: string;
-  Version?: number;
+  Version?: string;
 };
 
 export function getAllTags(): { [key: string]: number } {
@@ -32,4 +32,18 @@ export function getTagsFromFrontMatter(tags: any): Tag[] | null {
       };
     })
     .sort((tag: Tag) => tag.Name);
+}
+
+export function getAllTagsOrderdByCount(): string[] {
+  const tags = Object.entries(getAllTags())
+    .sort((a, b) => b[1] - a[1])
+    .values();
+
+  const keys: string[] = [];
+
+  for (const key of tags) {
+    keys.push(key[0]);
+  }
+
+  return keys;
 }

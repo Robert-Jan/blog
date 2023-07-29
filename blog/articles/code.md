@@ -6,6 +6,7 @@ date: 2022-07-06
 tags:
   - tag: .NET
     version: 7
+  - tag: awesome
 ---
 
 ```csharp:test:10-15,18,21
