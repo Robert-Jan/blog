@@ -35,8 +35,38 @@ export function getArticles(): Article[] {
       // Remove articles where the date is set in the future.
       .filter((article) => new Date(article.Date).getTime() < now)
       // Sort by article date in descending order.
-      .sort((a, b) => b.Date - a.Date)
+      .sort((a, b) => new Date(b.Date).getTime() - new Date(a.Date).getTime())
   );
+}
+
+export function getArticlesPaginated(page: number, perPage = 5): Article[] {
+  var start = (page - 1) * perPage;
+  var end = start + perPage;
+
+  return getArticles().slice(start, end);
+}
+
+export function getTotalPages(perPage = 5): number {
+  return Math.ceil(getArticles().length / perPage);
+}
+
+export function getArticlesByTag(tag: string): Article[] {
+  return (
+    getArticles()
+      // Get all articles that contain the given tag.
+      .filter((article) => article.Tags?.some((t) => t.Name == tag))
+  );
+}
+
+export function getArticlesByTagPaginated(tag: string, page: number, perPage = 5): Article[] {
+  var start = (page - 1) * perPage;
+  var end = start + perPage;
+
+  return getArticlesByTag(tag).slice(start, end);
+}
+
+export function getTotalPagesByTag(tag: string, perPage = 5): number {
+  return Math.ceil(getArticlesByTag(tag).length / perPage);
 }
 
 export function getArticle(slug: string): Article {
