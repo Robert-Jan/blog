@@ -12,7 +12,7 @@ export default function Base({ children }: LayoutProps): JSX.Element {
       <Head>
         <title>Robert-Jan.dev</title>
         <meta httpEquiv="Content-Type" content="text/html;charset=UTF-8" />
-        <meta name="robots" content="index, follow" />
+        <meta name="robots" content="index,follow" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <Header />

@@ -4,6 +4,7 @@ import { getAllTags, getAllTagsOrderdByCount } from "@/Tags";
 import { TagPill } from "@/components/TagPill";
 import { Article, getArticlesByTagPaginated, getTotalPagesByTag } from "@/Articles";
 import { ArticleTile } from "@/components/article/ArticleTile";
+import { Pagination } from "@/components/Pagination";
 
 export const getStaticPaths: GetStaticPaths = async () => {
   var paths: { params: { tag: string[] } }[] = [];
@@ -23,12 +24,15 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
   const parts = params!.tag as string[];
   const tag = parts[0];
   const page = parts?.at(1) ?? "1";
+  const maxPage = getTotalPagesByTag(tag);
 
   const articles = getArticlesByTagPaginated(tag, parseInt(page));
   const tags = getAllTagsOrderdByCount();
 
   return {
     props: {
+      page,
+      maxPage,
       tag,
       articles,
       tags
@@ -37,6 +41,8 @@ export const getStaticProps: GetStaticProps = async ({ params }) => {
 };
 
 export default function ArticlesWithTag({
+  page,
+  maxPage,
   tag,
   articles,
   tags
@@ -45,16 +51,21 @@ export default function ArticlesWithTag({
     <>
       <Head>
         <title>{`Articles about ${tag} · Robert-Jan.dev`}</title>
+        <meta name="robots" content="noindex" />
       </Head>
       <div className="mx-auto pt-12 sm:px-8 lg:px-20">
         <h1 className="w-full text-2xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl sm:leading-tight">
           Articles about {tag}
         </h1>
-        <div className="mt-6 flex items-start">
+        <h2 className="w-full text-xl leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl sm:leading-tight">
+          Everything about a single topic
+        </h2>
+        <div className="mt-8 flex items-start">
           <div className="mr-8 flex w-2/3 flex-col gap-y-4">
             {articles.map((article: Article) => (
               <ArticleTile article={article} key={article.Slug} />
             ))}
+            <Pagination currentPage={page} maxPage={maxPage} queryName="tag" queryLevel={2} />
           </div>
           <div className="w-1/3">
             <h1 className="w-full text-xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl sm:leading-tight">

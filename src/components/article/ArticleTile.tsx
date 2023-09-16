@@ -9,7 +9,7 @@ export function ArticleTile({ article }: ArticleTileProps): JSX.Element {
   return (
     <Link
       href={"/" + encodeURIComponent(article.Slug)}
-      className="w-full rounded-2xl border border-zinc-100 p-6 transition-colors dark:border-zinc-700/40 dark:hover:bg-zinc-800/20">
+      className="w-full rounded-2xl border border-zinc-100 p-6 transition-colors hover:bg-neutral-100/50 dark:border-zinc-700/40 dark:hover:bg-zinc-800/20">
       <h3 className="text-xl font-bold">{article.Title}</h3>
       <time dateTime={article.Date} className="mt-3 text-sm">
         {new Date(article.Date).toLocaleDateString("en-US", {
@@ -32,9 +32,9 @@ export function ArticleTile({ article }: ArticleTileProps): JSX.Element {
           className="ml-1 h-4 w-4 stroke-current">
           <path
             d="M6.75 5.75 9.25 8l-2.5 2.25"
-            stroke-width="1.5"
-            stroke-linecap="round"
-            stroke-linejoin="round"></path>
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"></path>
         </svg>
       </div>
     </Link>

@@ -3,7 +3,7 @@ import Document, { Head, Html, Main, NextScript } from "next/document";
 export default class Blog extends Document {
   render(): JSX.Element {
     return (
-      <Html className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]">
+      <Html lang="en" className="dark [--scroll-mt:9.875rem] lg:[--scroll-mt:6.3125rem]">
         <Head>
           <script
             dangerouslySetInnerHTML={{

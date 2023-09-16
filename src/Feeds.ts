@@ -2,7 +2,7 @@ import fs from "fs";
 import { Feed } from "feed";
 import { Article } from "@/Articles";
 
-export default async function generate(articles: Article[]) {
+export async function rss(articles: Article[]) {
   const URL = process.env.URL ?? "http://localhost:3000";
   const author = {
     name: "Robert-Jan"
@@ -31,7 +31,6 @@ export default async function generate(articles: Article[]) {
       id: article.Slug,
       link: `${URL}/${article.Slug}`,
       description: article.Description,
-      content: article.Description,
       author: [author],
       contributor: [author],
       date: new Date(article.Date)
