@@ -4,7 +4,6 @@ description: |
   Most companies try to stay ahead of the curve when it comes to visual design, but for Planetaria
   we needed to create a brand that would still inspire us 100 years from now when humanity has
   spread across our entire solar system.
-keywords: example,keyword
 date: 2022-07-08
 tags:
   - tag: .NET

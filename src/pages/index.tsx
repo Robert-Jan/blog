@@ -1,12 +1,12 @@
 import type { InferGetStaticPropsType } from "next";
 import { Article, getArticles } from "@/Articles";
-import generate from "@/RssFeed";
+import { rss } from "@/Feeds";
 
 export const getStaticProps = async () => {
   const articles = getArticles();
 
   // Generate RSS feeds on build.
-  generate(articles);
+  rss(articles);
 
   return {
     props: {

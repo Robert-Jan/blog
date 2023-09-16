@@ -5,7 +5,6 @@ keywords: example,keyword
 date: 2022-07-01
 tags:
   - tag: awesome
-series: test
 ---
 
 ## Awesome

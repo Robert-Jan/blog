@@ -8,6 +8,7 @@ export type Article = {
   Slug: string;
   Date: string;
   Tags: Tag[] | null;
+  Series?: string;
   Content?: string;
   Hero?: string;
   ReadingTime?: number;
@@ -26,10 +27,14 @@ export function getArticles(): Article[] {
 
         return {
           Title: data.title,
-          Description: data.description,
+          Description: data.description
+            .replace(/  |\r\n|\n|\r/gm, "")
+            .replace(/\s+/g, " ")
+            .trim(),
           Slug: fileName.replace(".md", ""),
           Date: data.date.toISOString(),
-          Tags: getTagsFromFrontMatter(data.tags)
+          Tags: getTagsFromFrontMatter(data.tags),
+          Series: data.series ?? null
         };
       })
       // Remove articles where the date is set in the future.
@@ -77,10 +82,14 @@ export function getArticle(slug: string): Article {
 
   return {
     Title: data.title,
-    Description: data.description,
+    Description: data.description
+      .replace(/  |\r\n|\n|\r/gm, "")
+      .replace(/\s+/g, " ")
+      .trim(),
     Slug: slug,
     Date: data.date.toISOString(),
     Tags: getTagsFromFrontMatter(data.tags),
+    Series: data.series ?? null,
     Content: content,
     Hero: data.hero ?? null,
     ReadingTime: Math.ceil(words / 225)

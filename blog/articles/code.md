@@ -7,6 +7,7 @@ tags:
   - tag: .NET
     version: 7
   - tag: awesome
+series: test
 ---
 
 ```csharp:test:10-15,18,21

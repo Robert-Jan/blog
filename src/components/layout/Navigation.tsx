@@ -1,3 +1,4 @@
+import { Console } from "console";
 import Link from "next/link";
 import { useRouter } from "next/router";
 
@@ -19,7 +20,7 @@ export default function Navigation(): JSX.Element {
               href={item.url}
               className="relative block px-3 py-2 transition hover:text-yellow-500 dark:hover:text-yellow-400">
               {item.name}
-              {router.pathname == item.url && (
+              {router.asPath.includes(item.url) && (
                 <span className="absolute inset-x-1 -bottom-px h-px bg-gradient-to-r from-yellow-500/0 via-yellow-500/40 to-yellow-500/0 dark:from-yellow-400/0 dark:via-yellow-400/40 dark:to-yellow-400/0"></span>
               )}
             </Link>

@@ -24,7 +24,7 @@ export function AH6(props: HProps): JSX.Element {
 function Heading({ as: HeadingElement, children, id, ...rest }: HeadingProps): JSX.Element {
   const ref = useRef<HTMLHeadingElement>(null);
   return (
-    <HeadingElement className="group inline-block" id={id} ref={ref} {...rest}>
+    <HeadingElement className="group inline-block w-full" id={id} ref={ref} {...rest}>
       {children}
       {id && (
         <>

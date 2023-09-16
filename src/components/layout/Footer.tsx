@@ -20,9 +20,25 @@ export default function Footer(): JSX.Element {
             className="transition hover:text-yellow-500 dark:hover:text-yellow-400">
             Analytics
           </Link>
+          <div>
+            Feeds:{" "}
+            <Link
+              href="/rss/feed.json"
+              target="_blank"
+              className="transition hover:text-yellow-500 dark:hover:text-yellow-400">
+              JSON
+            </Link>
+            /
+            <Link
+              href="/rss/feed.xml"
+              target="_blank"
+              className="transition hover:text-yellow-500 dark:hover:text-yellow-400">
+              XML
+            </Link>
+          </div>
         </div>
         <p className="text-sm text-zinc-400 dark:text-zinc-500">
-          © {new Date().getFullYear()} robert-jan.dev. All rights reserved.
+          © {new Date().getFullYear()} robert-jan.dev
         </p>
       </div>
     </footer>
