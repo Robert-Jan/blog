@@ -11,6 +11,7 @@ export type Article = {
   Series?: string;
   Content?: string;
   Hero?: string;
+  HeroCredits?: string;
   ReadingTime?: number;
 };
 
@@ -92,6 +93,7 @@ export function getArticle(slug: string): Article {
     Series: data.series ?? null,
     Content: content,
     Hero: data.hero ?? null,
+    HeroCredits: data.heroCredits ?? null,
     ReadingTime: Math.ceil(words / 225)
   };
 }

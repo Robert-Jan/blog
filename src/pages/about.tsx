@@ -27,7 +27,7 @@ export default function About(): JSX.Element {
       <Head>
         <title>About · Robert-Jan.dev</title>
       </Head>
-      <div className="mx-auto pt-12 sm:px-8 lg:px-20">
+      <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="relative h-96 w-full rounded-2xl drop-shadow-xl">
@@ -40,7 +40,7 @@ export default function About(): JSX.Element {
             </div>
           </div>
           <div className="lg:order-first lg:row-span-2">
-            <h1 className="text-4xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sm:leading-tight">
+            <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sm:leading-tight">
               I’m{" "}
               <span
                 style={{

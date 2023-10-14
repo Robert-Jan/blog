@@ -11,11 +11,12 @@ export type SerieTileProps = {
 
 export function SerieTile({ serie, selected }: SerieTileProps): JSX.Element {
   return (
-    <div className="flex w-full gap-x-8">
-      <div className="relative h-48 w-48 flex-none rounded-2xl drop-shadow-xl">
+    <div className="flex w-full flex-col gap-8 sm:flex-row">
+      <div className="relative h-48 w-full flex-none rounded-2xl drop-shadow-xl sm:w-48">
         <Image
-          src="/images/avatar.webp"
-          alt="Avatar of me"
+          src={serie.Image}
+          alt={serie.ImageCredits}
+          title={serie.ImageCredits}
           className="rounded-2xl object-cover"
           fill
         />
@@ -25,7 +26,7 @@ export function SerieTile({ serie, selected }: SerieTileProps): JSX.Element {
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
           {serie.Content}
         </p>
-        <div className="mt-3 flex flex-col divide-y">
+        <div className="mt-3 flex flex-col divide-y dark:divide-zinc-700/40">
           {serie.Articles.map((article: Article, index: number) => (
             <Link
               key={article.Slug}
