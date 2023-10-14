@@ -27,7 +27,9 @@ export function getSeries(): Serie[] {
         return {
           Title: data.title,
           Content: content,
-          Articles: articles
+          Articles: articles,
+          Image: data.image,
+          ImageCredits: data.imageCredits
         };
       })
       // Sort by serie title in descending order.
@@ -46,6 +48,8 @@ export function getSerieBySlug(slug: String): Serie {
   return {
     Title: data.title,
     Content: content,
-    Articles: articles
+    Articles: articles,
+    Image: data.image,
+    ImageCredits: data.imageCredits
   };
 }

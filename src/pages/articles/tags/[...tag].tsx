@@ -53,21 +53,21 @@ export default function ArticlesWithTag({
         <title>{`Articles about ${tag} · Robert-Jan.dev`}</title>
         <meta name="robots" content="noindex" />
       </Head>
-      <div className="mx-auto pt-12 sm:px-8 lg:px-20">
-        <h1 className="w-full text-2xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl sm:leading-tight">
+      <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
+        <h1 className="w-full text-2xl font-bold leading-tight tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
           Articles about {tag}
         </h1>
-        <h2 className="w-full text-xl leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl sm:leading-tight">
+        <h2 className="w-full text-xl leading-tight tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl">
           Everything about a single topic
         </h2>
-        <div className="mt-8 flex items-start">
-          <div className="mr-8 flex w-2/3 flex-col gap-y-4">
+        <div className="mt-8 flex flex-col items-start lg:flex-row">
+          <div className="mr-8 flex w-full flex-col gap-y-4 lg:w-2/3">
             {articles.map((article: Article) => (
               <ArticleTile article={article} key={article.Slug} />
             ))}
             <Pagination currentPage={page} maxPage={maxPage} queryName="tag" queryLevel={2} />
           </div>
-          <div className="w-1/3">
+          <div className="w-full lg:w-1/3">
             <h1 className="w-full text-xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl sm:leading-tight">
               Popular tags:
             </h1>

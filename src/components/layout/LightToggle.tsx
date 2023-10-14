@@ -1,4 +1,5 @@
-import { Menu } from "@headlessui/react";
+import { Menu, Transition } from "@headlessui/react";
+import { Fragment } from "react";
 
 export default function LightToggle(): JSX.Element {
   return (
@@ -29,66 +30,75 @@ export default function LightToggle(): JSX.Element {
             strokeLinejoin="round"></path>
         </svg>
       </Menu.Button>
-      <Menu.Items
-        as="ul"
-        className="dark:highlight-white/5 absolute top-8 z-50 mt-4 w-36 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:text-zinc-300 dark:ring-white/10">
-        <Menu.Item
-          as="li"
-          onClick={() => setTheme("light")}
-          className="flex cursor-pointer items-center px-2 py-1 dark:hover:bg-zinc-700/30">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            strokeWidth="1.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-            className="mr-2 h-6 w-6 stroke-zinc-500">
-            <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
-            <path
-              d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
-              fill="none"></path>
-          </svg>
-          Light
-        </Menu.Item>
-        <Menu.Item
-          as="li"
-          onClick={() => setTheme("dark")}
-          className="flex cursor-pointer items-center px-2 py-1 dark:hover:bg-zinc-700/30">
-          <svg
-            xmlns="http://www.w3.org/2000/svg"
-            fill="none"
-            viewBox="0 0 24 24"
-            strokeWidth={1.5}
-            stroke="currentColor"
-            className="mr-2 h-6 w-6 stroke-zinc-500">
-            <path
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
-            />
-          </svg>
-          Dark
-        </Menu.Item>
-        <Menu.Item
-          as="li"
-          onClick={() => setTheme("system")}
-          className="flex cursor-pointer items-center px-2 py-1 dark:hover:bg-zinc-700/30">
-          <svg viewBox="0 0 24 24" fill="none" className="mr-2 h-6 w-6">
-            <path
-              d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
-              strokeWidth="1.5"
-              strokeLinejoin="round"
-              className="stroke-zinc-500"></path>
-            <path
-              d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
+      <Transition
+        as={Fragment}
+        enter="transition ease-out duration-100"
+        enterFrom="transform opacity-0 scale-95"
+        enterTo="transform opacity-100 scale-100"
+        leave="transition ease-in duration-75"
+        leaveFrom="transform opacity-100 scale-100"
+        leaveTo="transform opacity-0 scale-95">
+        <Menu.Items
+          as="ul"
+          className="dark:highlight-white/5 absolute top-8 z-50 mt-4 w-48 overflow-hidden rounded-lg bg-white py-1 text-sm font-semibold shadow-lg shadow-zinc-800/5 ring-1 ring-zinc-900/5 backdrop-blur transition dark:bg-zinc-800/90 dark:text-zinc-300 dark:ring-white/10 md:w-36">
+          <Menu.Item
+            as="li"
+            onClick={() => setTheme("light")}
+            className="flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1">
+            <svg
+              viewBox="0 0 24 24"
+              fill="none"
               strokeWidth="1.5"
               strokeLinecap="round"
               strokeLinejoin="round"
-              className="stroke-zinc-500"></path>
-          </svg>
-          System
-        </Menu.Item>
-      </Menu.Items>
+              className="mr-2 h-6 w-6 stroke-zinc-500">
+              <path d="M8 12.25A4.25 4.25 0 0 1 12.25 8v0a4.25 4.25 0 0 1 4.25 4.25v0a4.25 4.25 0 0 1-4.25 4.25v0A4.25 4.25 0 0 1 8 12.25v0Z"></path>
+              <path
+                d="M12.25 3v1.5M21.5 12.25H20M18.791 18.791l-1.06-1.06M18.791 5.709l-1.06 1.06M12.25 20v1.5M4.5 12.25H3M6.77 6.77 5.709 5.709M6.77 17.73l-1.061 1.061"
+                fill="none"></path>
+            </svg>
+            Light
+          </Menu.Item>
+          <Menu.Item
+            as="li"
+            onClick={() => setTheme("dark")}
+            className="flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              fill="none"
+              viewBox="0 0 24 24"
+              strokeWidth={1.5}
+              stroke="currentColor"
+              className="mr-2 h-6 w-6 stroke-zinc-500">
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                d="M21.752 15.002A9.718 9.718 0 0118 15.75c-5.385 0-9.75-4.365-9.75-9.75 0-1.33.266-2.597.748-3.752A9.753 9.753 0 003 11.25C3 16.635 7.365 21 12.75 21a9.753 9.753 0 009.002-5.998z"
+              />
+            </svg>
+            Dark
+          </Menu.Item>
+          <Menu.Item
+            as="li"
+            onClick={() => setTheme("system")}
+            className="flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1">
+            <svg viewBox="0 0 24 24" fill="none" className="mr-2 h-6 w-6">
+              <path
+                d="M4 6a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v7a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6Z"
+                strokeWidth="1.5"
+                strokeLinejoin="round"
+                className="stroke-zinc-500"></path>
+              <path
+                d="M14 15c0 3 2 5 2 5H8s2-2 2-5"
+                strokeWidth="1.5"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className="stroke-zinc-500"></path>
+            </svg>
+            System
+          </Menu.Item>
+        </Menu.Items>
+      </Transition>
     </Menu>
   );
 }

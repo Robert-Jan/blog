@@ -21,11 +21,11 @@ export default function Series({
       <Head>
         <title>Series · Robert-Jan.dev</title>
       </Head>
-      <div className="mx-auto pt-12 sm:px-8 lg:px-20">
-        <h1 className="w-full text-2xl font-bold leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl sm:leading-tight">
+      <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
+        <h1 className="w-full text-2xl font-bold leading-tight tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">
           Article series
         </h1>
-        <h2 className="w-full text-xl leading-loose tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl sm:leading-tight">
+        <h2 className="w-full text-xl leading-tight tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-xl">
           Some topics deserve more parts
         </h2>
         <div className="mt-8 flex w-full items-start gap-y-8">

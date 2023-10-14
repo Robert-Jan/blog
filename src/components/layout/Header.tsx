@@ -4,9 +4,9 @@ import Link from "next/link";
 
 export default function Header(): JSX.Element {
   return (
-    <header className="relative flex w-full gap-4 px-4 py-8 sm:px-8 lg:px-20">
+    <header className="relative flex w-full gap-3 px-4 py-8 sm:px-8 md:gap-4 lg:px-20">
       <div className="flex flex-1">
-        <Link href="/">
+        <Link href="/" className="whitespace-nowrap">
           <span
             className="inline text-3xl font-black tracking-tight text-slate-400"
             style={{
@@ -21,7 +21,7 @@ export default function Header(): JSX.Element {
           </span>
         </Link>
       </div>
-      <div className="flex flex-1 justify-end md:justify-center">
+      <div className="relative flex flex-1 justify-end md:justify-center">
         <Navigation />
       </div>
       <div className="relative flex justify-end md:flex-1">
