@@ -65,7 +65,7 @@ export default function Article({
           </div>
         )}
       </div>
-      {article.Hero && (
+      {article.Hero && article.HeroCredits && (
         <div className="relative my-6 h-72 w-full overflow-hidden drop-shadow-xl sm:my-12 md:h-96">
           <Image
             src={article.Hero}

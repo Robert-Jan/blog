@@ -12,15 +12,17 @@ export type SerieTileProps = {
 export function SerieTile({ serie, selected }: SerieTileProps): JSX.Element {
   return (
     <div className="flex w-full flex-col gap-8 sm:flex-row">
-      <div className="relative h-48 w-full flex-none rounded-2xl drop-shadow-xl sm:w-48">
-        <Image
-          src={serie.Image}
-          alt={serie.ImageCredits}
-          title={serie.ImageCredits}
-          className="rounded-2xl object-cover"
-          fill
-        />
-      </div>
+      {serie.Image && serie.ImageCredits && (
+        <div className="relative h-48 w-full flex-none rounded-2xl drop-shadow-xl sm:w-48">
+          <Image
+            src={serie.Image}
+            alt={serie.ImageCredits}
+            title={serie.ImageCredits}
+            className="rounded-2xl object-cover"
+            fill
+          />
+        </div>
+      )}
       <div className="flex flex-col">
         <h3 className="text-xl font-bold">{serie.Title}</h3>
         <p className="relative z-10 mt-2 text-sm text-zinc-600 dark:text-zinc-400">
