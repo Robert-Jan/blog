@@ -19,11 +19,12 @@ export default function Home({
   articles
 }: InferGetStaticPropsType<typeof getStaticProps>): JSX.Element {
   return (
-    <>
-      HOME
-      {articles.map((article: Article) => (
-        <p key={article.Slug}>{article.Title}</p>
-      ))}
-    </>
+    <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
+      <div>
+        <h1 className="text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sm:leading-tight">
+          My ramblings about software
+        </h1>
+      </div>
+    </div>
   );
 }
