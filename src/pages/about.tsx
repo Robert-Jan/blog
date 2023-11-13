@@ -17,7 +17,7 @@ const certifications: Certification[] = [
     Subtitle: "AZ-900",
     StartYear: 2023,
     Logo: "/images/azure.png",
-    Link: "https://www.credly.com/badges/fa472978-5e7d-4520-b2a2-d9e5d062d6e5/public_url"
+    Link: "https://learn.microsoft.com/en-us/users/robert-jan/credentials/41c9d14a57cccc09"
   }
 ];
 
