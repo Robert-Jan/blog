@@ -45,7 +45,10 @@ export default function Navigation(): JSX.Element {
             <Link href="/">
               <Menu.Item
                 as="li"
-                className="flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1">
+                className={cn(
+                  "flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1",
+                  { "text-yellow-500 dark:text-yellow-400": router.asPath == "/" }
+                )}>
                 Home
               </Menu.Item>
             </Link>
@@ -53,7 +56,10 @@ export default function Navigation(): JSX.Element {
               <Link href={item.url} key={item.url}>
                 <Menu.Item
                   as="li"
-                  className="flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1">
+                  className={cn(
+                    "flex cursor-pointer items-center px-4 py-3 dark:hover:bg-zinc-700/30 md:px-2 md:py-1",
+                    { "text-yellow-500 dark:text-yellow-400": router.asPath.includes(item.url) }
+                  )}>
                   {item.name}
                 </Menu.Item>
               </Link>
