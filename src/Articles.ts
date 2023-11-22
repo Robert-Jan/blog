@@ -35,6 +35,8 @@ export function getArticles(): Article[] {
           Slug: fileName.replace(".md", ""),
           Date: data.date.toISOString(),
           Tags: getTagsFromFrontMatter(data.tags),
+          Hero: data.hero ?? null,
+          HeroCredits: data.heroCredits ?? null,
           Series: data.series ?? null
         };
       })

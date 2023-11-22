@@ -1,6 +1,8 @@
 import type { InferGetStaticPropsType } from "next";
 import { getArticles } from "@/Articles";
 import { rss } from "@/Feeds";
+import { ArticleTile } from "@/components/article/ArticleTile";
+import Link from "next/link";
 
 export const getStaticProps = async () => {
   const articles = getArticles();
@@ -10,7 +12,7 @@ export const getStaticProps = async () => {
 
   return {
     props: {
-      articles
+      articles: articles.slice(0, 4)
     }
   };
 };
@@ -85,6 +87,29 @@ export default function Home({
           </a>
         </div>
       </div>
+      <div className="mt-16 grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
+        <ArticleTile article={articles[0]} hero={true} className="lg:col-span-3" />
+        <ArticleTile article={articles[1]} />
+        <ArticleTile article={articles[2]} />
+        <ArticleTile article={articles[3]} />
+      </div>
+      <Link
+        href="/articles"
+        aria-hidden="true"
+        className="relative z-10 mt-4 flex items-center text-sm">
+        More articles
+        <svg
+          viewBox="0 0 16 16"
+          fill="none"
+          aria-hidden="true"
+          className="ml-1 h-4 w-4 stroke-current">
+          <path
+            d="M6.75 5.75 9.25 8l-2.5 2.25"
+            strokeWidth="1.5"
+            strokeLinecap="round"
+            strokeLinejoin="round"></path>
+        </svg>
+      </Link>
     </div>
   );
 }
