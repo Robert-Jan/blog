@@ -24,12 +24,13 @@ export function ArticleTile({ article, hero, className }: ArticleTileProps): JSX
             alt={article.HeroCredits!}
             title={article.HeroCredits}
             className="rounded-2xl object-cover"
+            priority
             fill
           />
         </div>
       )}
       <div>
-        <h3 className={cn("font-bold", { "mb-3 text-3xl": hero, "text-xl": !hero })}>
+        <h3 className={cn("font-bold", { "mb-3 text-2xl md:text-3xl": hero, "text-xl": !hero })}>
           {article.Title}
         </h3>
         <time dateTime={article.Date} className="mt-3 text-sm">
