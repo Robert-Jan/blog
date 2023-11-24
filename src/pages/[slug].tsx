@@ -53,7 +53,7 @@ export default function Article({
           <meta property="og:image" content={"https://robert-jan.dev" + article.Hero} />
         )}
       </Head>
-      <div className="mx-auto mb-4 mt-6 max-w-3xl px-4 sm:mt-12 sm:px-8">
+      <div className="mx-auto mb-4 mt-6 max-w-3xl px-4 sm:mt-12 md:px-0">
         <h1 className="mt-6 text-4xl font-bold tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-5xl sm:leading-tight">
           {article.Title}
         </h1>
@@ -72,6 +72,7 @@ export default function Article({
             alt={article.HeroCredits}
             title={article.HeroCredits}
             className="object-cover dark:brightness-75"
+            priority
             fill
           />
         </div>
