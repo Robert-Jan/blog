@@ -1,8 +1,9 @@
 import type { InferGetStaticPropsType } from "next";
-import { getArticles } from "@/Articles";
+import { Article, getArticles } from "@/Articles";
 import { rss } from "@/Feeds";
 import { ArticleTile } from "@/components/article/ArticleTile";
 import Link from "next/link";
+import { cn } from "@/Classnames";
 
 export const getStaticProps = async () => {
   const articles = getArticles();
@@ -41,9 +42,9 @@ export default function Home({
           My ramblings about software
         </h1>
         <p className="pt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-          I’ve loved making things for as long as I can remember, and wrote my first program when I
-          was 6 years old, just two weeks after my mom brought home the brand new Macintosh LC 550
-          that I taught myself to type on.
+          Hi, I'm Robert-Jan and on this blog, I share with you my thoughts and ramblings about
+          technologies like, C#, .NET and Azure. I learn so much when using those tools on a daily
+          basis that I want to share my knowledge with you trough this blog.
         </p>
         <div className="mt-6 flex gap-6">
           <a
@@ -88,10 +89,14 @@ export default function Home({
         </div>
       </div>
       <div className="mt-16 grid w-full grid-cols-1 gap-4 lg:grid-cols-3">
-        <ArticleTile article={articles[0]} hero={true} className="lg:col-span-3" />
-        <ArticleTile article={articles[1]} />
-        <ArticleTile article={articles[2]} />
-        <ArticleTile article={articles[3]} />
+        {articles.map((article: Article, index) => (
+          <ArticleTile
+            article={article}
+            key={article.Slug}
+            hero={index == 0}
+            className={cn({ "lg:col-span-3": index == 0 })}
+          />
+        ))}
       </div>
       <Link
         href="/articles"
