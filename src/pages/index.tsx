@@ -42,7 +42,7 @@ export default function Home({
           My ramblings about software
         </h1>
         <p className="pt-3 text-base leading-relaxed text-zinc-600 dark:text-zinc-400">
-          Hi, I'm Robert-Jan and on this blog, I share with you my thoughts and ramblings about
+          Hi, I&apos;m Robert-Jan and on this blog, I share with you my thoughts and ramblings about
           technologies like, C#, .NET and Azure. I learn so much when using those tools on a daily
           basis that I want to share my knowledge with you trough this blog.
         </p>
