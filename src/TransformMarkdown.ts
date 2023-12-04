@@ -1,3 +1,4 @@
+import rehypeExternalLinks from "rehype-external-links";
 import rehypeImgSize from "rehype-img-size";
 import rehypeParse from "rehype-parse";
 import rehypeRaw from "rehype-raw";
@@ -20,6 +21,7 @@ export async function MarkdownToHTML(article: Article): Promise<String> {
       .use(remarkParse)
       .use(remarkGfm)
       .use(remarkRehype, { allowDangerousHtml: true })
+      .use(rehypeExternalLinks, { target: "_blank" })
       .use(rehypeImgSize, { dir: "public" })
       .use(rehypeRaw)
       .use(rehypeSlug)
