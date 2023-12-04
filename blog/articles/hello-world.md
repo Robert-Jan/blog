@@ -3,7 +3,6 @@ title: Hello World
 description: |
   Another software engineer that launches a blog. You heard this story before, haven’t you? 
   In this article I’ll explain to you why I started this blog.
-keywords: example,keyword
 date: 2023-01-01
 tags:
   - tag: personal
