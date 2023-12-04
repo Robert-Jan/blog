@@ -20,6 +20,7 @@ export default function Series({
     <>
       <Head>
         <title>Series · Robert-Jan.dev</title>
+        <meta name="robots" content="noindex" />
       </Head>
       <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
         <h1 className="w-full text-2xl font-bold leading-tight tracking-tight text-zinc-800 dark:text-zinc-100 sm:text-4xl">

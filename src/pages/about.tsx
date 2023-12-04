@@ -26,6 +26,14 @@ export default function About(): JSX.Element {
     <>
       <Head>
         <title>About · Robert-Jan.dev</title>
+        <meta name="description" content="I’m Robert-Jan, a passionate developer on a adventure." />
+        <meta property="og:title" content="About me" />
+        <meta
+          property="og:description"
+          content="I’m Robert-Jan, a passionate developer on a adventure."
+        />
+        <meta property="og:url" content="https://robert-jan.dev/about" />
+        <meta property="og:image" content="https://robert-jan.dev/images/avatar.webp" />
       </Head>
       <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
