@@ -12,4 +12,6 @@ hero: /images/articles/how-does-a-llm-work-hero.jpg
 heroCredits: Photo by Alina Grubnyak on Unsplash
 ---
 
-Work In Progress
+Work In Progress[^1]
+
+[^1]: Big note.

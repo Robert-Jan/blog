@@ -33,14 +33,14 @@ export default function About(): JSX.Element {
           content="I’m Robert-Jan, a passionate developer on a adventure."
         />
         <meta property="og:url" content="https://robert-jan.dev/about" />
-        <meta property="og:image" content="https://robert-jan.dev/images/avatar.webp" />
+        <meta property="og:image" content="https://robert-jan.dev/images/avatar.jpg" />
       </Head>
       <div className="mx-auto px-4 pt-6 sm:px-8 sm:pt-12 lg:px-20">
         <div className="grid grid-cols-1 gap-y-16 lg:grid-cols-2 lg:grid-rows-[auto_1fr] lg:gap-y-12">
           <div className="lg:pl-20">
             <div className="relative h-96 w-full rounded-2xl drop-shadow-xl">
               <Image
-                src="/images/avatar.webp"
+                src="/images/avatar.jpg"
                 alt="Avatar of me"
                 className="rounded-2xl object-cover"
                 fill
